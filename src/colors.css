@@ -1,41 +1,37 @@
-﻿/* Tierra Andina: official colors plus accessible variants from the same families. */
+﻿/* MVP 1.4: luminous editorial palette and accessible semantic roles. */
 :root {
-  --tierra-profunda: #38261D;
-  --arcilla: #986447;
-  --arena: #D7C2A0;
-  --trigo: #E9D7B5;
-  --oliva: #606747;
-  --arcilla-oscura: #72452F;
-  --oliva-oscura: #4D5338;
-  --trigo-claro: #FFF1D6;
+  --crema: #F1E7D5;
+  --cafe-profundo: #493325;
+  --oliva: #68754B;
+  --miel-dorada: #C99542;
+  --tierra-suave: #B58B67;
+  --crema-clara: #F8F2E8;
+  --crema-tierra: #E8DAC4;
+  --cafe-secundario: #705744;
+  --cafe-hover: #38271D;
+  --oliva-texto: #536039;
+  --miel-texto: #79531F;
+  --borde-control: #816B55;
 
-  --background: var(--trigo);
-  --surface: var(--arena);
-  --surface-input: var(--trigo);
-  --text: var(--tierra-profunda);
-  --text-muted: var(--arcilla-oscura);
-  --text-accent: var(--arcilla-oscura);
-  --text-action: var(--oliva-oscura);
-  --action: var(--oliva);
-  --action-hover: var(--oliva-oscura);
-  --on-action: var(--trigo-claro);
-  --dark-surface: var(--tierra-profunda);
-  --on-dark: var(--trigo);
-  --on-dark-muted: var(--arena);
-  --border-decorative: var(--arcilla);
-  --border-control: var(--oliva);
-  --focus: var(--arcilla-oscura);
-
-  /* Compatibility aliases keep the existing MVP 1.2 composition intact. */
-  --cream: var(--background);
-  --forest: var(--dark-surface);
-  --olive: var(--text-action);
-  --ink: var(--text);
-  --line: var(--border-decorative);
-
-  /* Existing artwork colors are intentionally outside the UI migration. */
-  --art-landscape: #b5be9b;
-  --art-botanical-accent: #8b581f;
-  --art-botanical-footer: #aab28e;
-  --art-botanical-olive: #526342;
+  --background: var(--crema);
+  --surface: var(--crema-clara);
+  --surface-alt: var(--crema-tierra);
+  --surface-input: var(--crema-clara);
+  --text: var(--cafe-profundo);
+  --text-muted: var(--cafe-secundario);
+  --text-accent: var(--miel-texto);
+  --text-action: var(--oliva-texto);
+  --action: var(--cafe-profundo);
+  --action-hover: var(--cafe-hover);
+  --on-action: var(--crema);
+  --dark-surface: var(--cafe-profundo);
+  --on-dark: var(--crema);
+  --on-dark-muted: var(--crema-tierra);
+  --border-decorative: var(--tierra-suave);
+  --border-control: var(--borde-control);
+  --focus: var(--cafe-profundo);
+  --art-landscape: var(--oliva-texto);
+  --art-botanical-accent: var(--miel-dorada);
+  --art-botanical-footer: var(--oliva);
+  --art-botanical-olive: var(--oliva);
 }

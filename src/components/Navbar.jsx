@@ -1,7 +1,7 @@
+import Icon from './Icon';
 import {BETA_MODE, BETA_NOTICE} from '../config/beta';
 import {useEffect, useRef, useState} from 'react';
 import {Link, NavLink, useLocation} from 'react-router-dom';
-import {ShoppingBag, Leaf, Menu, X} from 'lucide-react';
 import {useCart} from '../context/CartContext';
 
 export default function Navbar() {
@@ -37,16 +37,16 @@ export default function Navbar() {
   };
   return <header className="site-header" onKeyDown={closeMenu}>
     {BETA_MODE && <p className="beta-notice">{BETA_NOTICE}</p>}
-    <div className="announcement">De Quillabamba a tu mesa <span aria-hidden="true">✳</span> Café & miel artesanal</div>
+    <div className="announcement">De Quillabamba a tu mesa <span className="announcement-mark"><Icon name="asterisk" size={14}/></span> Café & miel artesanal</div>
     <div className="container-site navigation-shell">
-      <Link to="/" onClick={() => followLink('/')} className="brand" aria-label="Raíces de Quillabamba, inicio"><Leaf size={30} strokeWidth={1.2}/><span className="serif">Raíces<small>de Quillabamba</small></span></Link>
+      <Link to="/" onClick={() => followLink('/')} className="brand" aria-label="Raíces de Quillabamba, inicio"><Icon name="leaf" size={30}/><span className="serif">Raíces<small>de Quillabamba</small></span></Link>
       <button ref={toggleRef} className="mobile-menu-toggle" type="button" aria-expanded={open} aria-controls="primary-navigation" aria-label={open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'} onClick={() => setOpen(value => !value)}>
-        {open ? <X size={20} aria-hidden="true"/> : <Menu size={20} aria-hidden="true"/>}<span>Menú</span>
+        {open ? <Icon name="close" size={20}/> : <Icon name="menu" size={20}/>}<span>Menú</span>
       </button>
       <nav ref={navRef} id="primary-navigation" className={open ? 'primary-navigation is-open' : 'primary-navigation'} aria-label="Navegación principal">
         {[['/','Inicio'],['/catalogo','Productos'],['/nosotros','Nuestro origen'],['/mayoristas','Mayoristas']].map(([to,label]) => <NavLink key={to} to={to} onClick={() => followLink(to)} end={to==='/'} className={({isActive}) => isActive ? 'nav-active' : ''}>{label}</NavLink>)}
       </nav>
-      <Link to="/carrito" onClick={() => followLink('/carrito')} aria-label={`Carrito, ${count} productos`} className="nav-cart"><ShoppingBag size={19} strokeWidth={1.5}/><span className="cart-label">Tu carrito</span><span className="cart-count">{count}</span></Link>
+      <Link to="/carrito" onClick={() => followLink('/carrito')} aria-label={`Carrito, ${count} productos`} className="nav-cart"><Icon name="bag" size={20}/><span className="cart-label">Tu carrito</span><span className="cart-count">{count}</span></Link>
     </div>
   </header>;
 }

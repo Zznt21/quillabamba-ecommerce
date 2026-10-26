@@ -1,4 +1,4 @@
-﻿# Raíces de Quillabamba — MVP 1.3
+﻿# Raíces de Quillabamba — MVP 1.4
 
 Tienda demo de café y miel artesanal de Quillabamba (React, Vite, Tailwind CSS 4).
 
@@ -66,3 +66,13 @@ Menú desplegable bajo 768 px con botón nativo, `aria-expanded`, enlaces fuera 
 Controles de cantidad, carrito, cierre del toast y navegación con objetivos de al menos 44 px. Se redujeron mínimos intrínsecos de columnas y se permite partir textos largos sin ocultar el desbordamiento global. El toast reserva espacio inferior, respeta el área segura del dispositivo y recoloca el control enfocado si coincide con el aviso. Su estado y temporizador siguen en CartContext.
 
 Se conservaron las 15 pruebas existentes, la paleta y las reglas de movimiento reducido; no se añadieron dependencias. Revisión CSS estática para los tramos de 375, 768, 1024 y 1440 px. Pendiente comprobación real en esas resoluciones, menú con teclado y lector de pantalla, teclado virtual, desbordamientos y posición del toast: no hay una conexión de navegador utilizable en esta sesión.
+
+## Refinamiento visual MVP 1.4
+
+Nueva paleta centralizada en `src/colors.css`: crema #F1E7D5 como fondo, café profundo #493325 en textos y botones, oliva #68754B en botánica, miel #C99542 en detalles y tierra suave #B58B67 en bordes. Variantes claras para superficies y variantes oscuras de oliva/miel para texto pequeño. Origen, anuncio superior y pie de página usan superficies luminosas. Las fotografías locales se mantienen sin modificación.
+
+`Icon.jsx` reutiliza Lucide, ya instalado: SVG de trazo 1.5, `currentColor`, `aria-hidden` y `focusable=false`. Flechas, suma/resta, cierre y asterisco dejaron de depender de caracteres Unicode. Menú, carrito y búsqueda comparten el mismo estilo. Los controles conservan sus etiquetas accesibles y mínimos táctiles existentes.
+
+Pruebas añadidas para contraste AA de tokens y prevención de símbolos de interfaz Unicode. No se cambiaron cálculos, carrito, localStorage, temporizador del toast, WhatsApp, beta ni configuración Vercel. Sin nuevas dependencias.
+
+Pendiente: validación visual y de interacción en Safari iOS, Chrome Android y escritorio a 375, 768, 1024 y 1440 px. La revisión realizada es de código y contraste calculado, no una validación en dispositivos reales.

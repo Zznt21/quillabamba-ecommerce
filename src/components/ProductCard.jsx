@@ -1,4 +1,5 @@
-﻿import {Link} from 'react-router-dom';
+import Icon from './Icon';
+import {Link} from 'react-router-dom';
 import {money} from '../data/products';
 import {useCart} from '../context/CartContext';
 import EditorialImage from './EditorialImage';
@@ -14,7 +15,7 @@ export default function ProductCard({product}) {
     <div className="product-info"><p className="eyebrow">{product.category === 'cafe' ? 'Café' : 'Miel'} · Quillabamba</p>
       <Link to={`/producto/${product.id}`}><h3>{product.name}</h3></Link>
       <div className="product-price"><strong>{money(product.price)}</strong><span>{product.unit} · Precio de ejemplo</span></div>
-      <button disabled={atLimit} onClick={() => add(product.id)} aria-label={`Añadir ${product.name} al carrito`} className="product-add">{atLimit ? 'Límite alcanzado' : 'Agregar al carrito'}<span aria-hidden="true">+</span></button>
+      <button disabled={atLimit} onClick={() => add(product.id)} aria-label={`Añadir ${product.name} al carrito`} className="product-add">{atLimit ? 'Límite alcanzado' : 'Agregar al carrito'}<Icon name="plus"/></button>
       {atLimit && <p className="mt-2 text-sm">Límite de 99 unidades alcanzado.</p>}
     </div>
   </article>;

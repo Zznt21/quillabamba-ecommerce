@@ -1,4 +1,5 @@
-﻿import {useLayoutEffect, useRef} from 'react';
+import Icon from './Icon';
+import {useLayoutEffect, useRef} from 'react';
 
 // Presentation only: notification state and its 3-second lifecycle remain in CartContext.
 export default function ToastViewport({message, revision, onDismiss}) {
@@ -33,6 +34,6 @@ export default function ToastViewport({message, revision, onDismiss}) {
     <div role="status" aria-live="polite" aria-atomic="true" className="min-w-0 flex-1">
       <span key={revision}>{message}</span>
     </div>
-    {message && <button type="button" aria-label="Cerrar notificación" className="toast-close" onClick={onDismiss}><span aria-hidden="true">×</span></button>}
+    {message && <button type="button" aria-label="Cerrar notificación" className="toast-close" onClick={onDismiss}><Icon name="close"/></button>}
   </div>;
 }

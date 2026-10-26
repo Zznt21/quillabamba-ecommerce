@@ -1,4 +1,4 @@
-﻿import {useState} from 'react';
+import {useState} from 'react';
 
 // Photographs illustrate categories, not actual packaging or verified production sites.
 export default function EditorialImage({kind = 'cafe', alt, className = '', eager = false, sizes = '(max-width: 767px) 50vw, (max-width: 1023px) 45vw, 360px'}) {
